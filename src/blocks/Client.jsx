@@ -31,7 +31,7 @@ const Client = () => {
       setFinishAddress('');
       setRoute({
         polyline: null,
-        boundingBox: null,
+        bounding_box: null,
       });
       setOrder(null);
     },
@@ -50,7 +50,7 @@ const Client = () => {
 
   const [route, setRoute] = useState({
     polyline: null,
-    boundingBox: null,
+    bounding_box: null,
   });
 
   const [order, setOrder] = useState(null);
@@ -73,11 +73,11 @@ const Client = () => {
     }
 
     setStartLatLng([order.start.latitude, order.start.longitude]);
-    setFinishLatLng([order.end.latitude, order.end.longitude]);
+    setFinishLatLng([order.finish.latitude, order.finish.longitude]);
 
     setStartAddress(order.start.address);
-    setFinishAddress(order.end.address);
-  }, [order?.start, order?.end]);
+    setFinishAddress(order.finish.address);
+  }, [order?.start, order?.finish]);
 
   useEffect(() => {
     if (!startLatLng || !finishLatLng) {
@@ -87,7 +87,7 @@ const Client = () => {
     fetchRoute(startLatLng, startAddress, finishLatLng, finishAddress, token).then(data => {
       setRoute({
         polyline: decodePolyline(data.polyline),
-        boundingBox: data.boundingBox,
+        bounding_box: data.bounding_box,
       });
     });
   }, [hashLatLng(startLatLng), hashLatLng(finishLatLng)]);
@@ -205,8 +205,8 @@ function Scroller({ active, startLatLng, finishLatLng, route }) {
     }
 
     const bounds = [
-      [route.boundingBox.bottomLeft.latitude, route.boundingBox.bottomLeft.longitude],
-      [route.boundingBox.topRight.latitude, route.boundingBox.topRight.longitude],
+      [route.bounding_box.bottom_left.latitude, route.bounding_box.bottom_left.longitude],
+      [route.bounding_box.top_right.latitude, route.bounding_box.top_right.longitude],
     ];
 
     map.flyToBounds(bounds, {

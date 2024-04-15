@@ -111,12 +111,12 @@ function ControlPanel({ active, users, onSelectUser, onAddUser, onRemoveUser, on
                   <div>
                     <div className="text-gray-600 group-hover:text-black">{formatPhone(client.phone)}</div>
                     <div className="text-xs text-gray-500">
-                      {client.order_id ? (
+                      {client.order?.id ? (
                         <span>
                           <span className="font-semibold text-black">Has order </span>
                           <span>
                             {' '}
-                            [id: <span>{client.order_id}</span>]
+                            [id: <span>{client.order.id}</span>]
                           </span>
                         </span>
                       ) : (
@@ -174,12 +174,12 @@ function ControlPanel({ active, users, onSelectUser, onAddUser, onRemoveUser, on
                         <OfflineIcon className={'text-red-500/50'} size={'xs'} />
                       )}
 
-                      {driver.order_request?.id ? (
+                      {driver.order?.id ? (
                         <span>
                           <span className="font-semibold text-black">Has order </span>
                           <span>
                             {' '}
-                            [id: <span>{driver.order_request.order_id}</span>]
+                            [id: <span>{driver.order.id}</span>]
                           </span>
                         </span>
                       ) : (

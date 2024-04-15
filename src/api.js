@@ -57,7 +57,7 @@ export async function fetchRoute(fromLatLng, fromAddress, toLatLng, toAddress, t
 }
 
 export async function fetchOrders(token) {
-  const { items: orders } = await fetch(API_URL + `/api/trip/orders`, {
+  const { items: orders } = await fetch(API_URL + `/api/trip/orders?status=ACTIVE`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

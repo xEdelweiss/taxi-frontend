@@ -36,7 +36,7 @@ const OrderTracking = ({ order, onPayClick, onCancelClick }) => {
             )}
           </StatusLine>
 
-          <StatusLine active={orderStep === 2}>{order.end.address}</StatusLine>
+          <StatusLine active={orderStep === 2}>{order.finish.address}</StatusLine>
         </div>
       </div>
 

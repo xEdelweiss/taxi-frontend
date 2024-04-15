@@ -61,8 +61,14 @@ const Driver = () => {
       {token && profile && (
         <BottomPanel>
           {!order && <NoOrder online={profile.online} onChangeOnline={onChangeOnline} />}
-          {order?.status === 'WAITING_FOR_DRIVER' && (
-            <PendingOrder order={order} onAccept={onAccept} onReject={onReject} />
+          {order && (
+            order?.status === 'WAITING_FOR_DRIVER' ? (
+              <PendingOrder order={order} onAccept={onAccept} onReject={onReject} />
+            ) : (
+              <div>
+                {order.status}
+              </div>
+            )
           )}
         </BottomPanel>
       )}

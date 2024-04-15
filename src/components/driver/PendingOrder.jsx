@@ -16,7 +16,7 @@ const PendingOrder = ({ order, onAccept, onReject }) => {
           )}
         </StatusLine>
 
-        <StatusLine>{order.end.address}</StatusLine>
+        <StatusLine>{order.finish.address}</StatusLine>
       </div>
 
       <div className="flex justify-center gap-2">
