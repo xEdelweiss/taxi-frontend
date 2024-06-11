@@ -1,8 +1,7 @@
-# React + Vite
+# Demo Taxi UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates a debug UI for a [taxi API](https://github.com/xEdelweiss/taxi-backend/) that implements ordering a taxi from point A to point B.
 
-Currently, two official plugins are available:
+Built with React.js, Leaflet and TailwindCSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![UI Example](https://sverdlykivskyi.net.ua/misc/taxi/ui.png)
